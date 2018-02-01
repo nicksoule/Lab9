@@ -1,3 +1,4 @@
+
 /*
  * Nicholas Soule
  * Lab9 - Java - prompts user for info about any number of cars and store the info in an 
@@ -34,7 +35,7 @@ public class CarApp {
 			model = scan.nextLine();
 			carInfo.setModel(model);
 			// validates user entered only valid years for car year
-			year = Validator.getInt(scan, "Enter Car #" + (i + 1) + " Year: ", 1885, 2020);
+			year = Validator.getInt(scan, "Enter Car #" + (i + 1) + " Year: \n", 1885, 2020);
 			carInfo.setYear(year);
 			System.out.println("Enter Car #" + (i + 1) + " Price: ");
 			price = scan.nextDouble();
@@ -46,12 +47,13 @@ public class CarApp {
 		}
 		System.out.println("Current Invetory: ");
 		for (int i = 0; i < carList.size(); i++) {
-			// reassigned values of data to different variables to make the print out statement more readable
+			// reassigned values of data to different variables to make the print out
+			// statement more readable
 			String m = carList.get(i).getMake();
 			String m2 = carList.get(i).getModel();
 			int y = carList.get(i).getYear();
 			double p = carList.get(i).getPrice();
-			System.out.printf("%-10s %-10s %-10s %-10s\n", m, m2, y, "$" + p);
+			System.out.printf("%-10s %-10s %-10s %s%-10.2f\n", m, m2, y, "$", p);
 		}
 
 	}
